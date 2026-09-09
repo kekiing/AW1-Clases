@@ -1,0 +1,16 @@
+4-9
+
+NODE.JS = entorno de JavaScript
+
+div = elemento no semantico, usado con ese sentido
+    aricle = ejemplo de la revista. Usarlo cuando su contenido se entiende por si mismo
+            sin depender de su contexto. Es el contrario al <section>
+
+
+picture = contenedor flexible para ofrecer diferentes versiones de una imagen adaptado
+        al display en el que se muestra
+
+
+9-9
+
+NODE.JS = entorno de ejecucion de JavaScript
