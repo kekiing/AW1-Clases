@@ -1,0 +1,67 @@
+/*
+Sintaxis
+*/
+/*
+REGLA CSS
+selector{
+    propiedad1: valor;
+    propiedad2: valor;
+    propiedad3: valor;
+}
+    */
+ 
+*{  /*Selector UNIVERSAL. Ataca todas los elementos y aplica su regla. El outliner muestra su hitbox*/
+   /* outline: 1px red solid; */
+}
+
+html, body, h1, h2, h3, p { /*Va con coma porque estan anidados*/
+    margin: 0;
+    padding: 0;
+}
+
+/* Selectores de TIPO --- Van primero*/  
+/*Peso = 001*/
+body{
+    background-color: #ffffff;
+}
+header{
+    background-color: #ffffff;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+/* selectors de CLASE --- Van debajo de los de CLASE*/
+/*Peso = 010*/
+.vinculo-pie{
+    color: #999999;
+}
+
+/* Cabecera */
+.cabecera-principal{
+    background-color: #999999;
+}
+.cabecera-principal nav a{  /*Estp es un selector combinado*/
+    color: #999999;
+}
+
+.cabecera-principal a img { /*Selector combinado. Solamente se aplica (en este caso) a la imagen, porque es el ultimo de la combinacion*/
+    width: 50px;
+}
+
+/* contenido principal */
+.contenido-principal{
+    background-color: #5f5f5f;
+}
+
+/* pie principal */
+.pie-principal{
+    background-color: #999999;
+}
+
+/* selectores de ID -- NO USAR. EL PROFE LOS ODIA igual que el !important */
+/*Peso = 100*/
+#navegacion-principal {
+    background-color: rgb(230, 230, 230);
+}
