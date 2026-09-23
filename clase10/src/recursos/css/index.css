@@ -9,9 +9,12 @@ selector{
     propiedad3: valor;
 }
     */
+
+
  
 *{  /*Selector UNIVERSAL. Ataca todas los elementos y aplica su regla. El outliner muestra su hitbox*/
    /* outline: 1px red solid; */
+   box-sizing: border-box; /*Con esto fuerza a que el box tenga las dimensiones que yo le habia marcado "300x200"*/
 }
 
 html, body, h1, h2, h3, p { /*Va con coma porque estan anidados*/
@@ -54,6 +57,17 @@ a{
 .contenido-principal{
     background-color: #5f5f5f;
 }
+
+.contenido-principal .contenedor{
+    width: 300px;
+    height: 200px;
+    padding: 10px; /*Relleno. Si pongo un solo valor afecta a los 4 bordes. Si quiero que afecte a cada borde individualmente 
+                    puedo colocar los 4 bordes "10px (arriba) 11px(derecha) 12px(abajo) 13px(izquierda)
+                    Tambien puede hacerse -left -right -top*/
+    background-color: #ccc;
+    border: 2px solid black;
+}
+
 
 /* pie principal */
 .pie-principal{
