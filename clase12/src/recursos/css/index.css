@@ -1,0 +1,147 @@
+/*
+Sintaxis
+*/
+/*
+REGLA CSS
+selector{
+    propiedad1: valor;
+    propiedad2: valor;
+    propiedad3: valor;
+}
+    */
+
+@font-face {
+    font-family: nunito; /*Nombramos la fuente*/
+    src: url(/src/recursos/Nunito/static/Nunito-Regular.ttf); /*importamos la fuente*/
+}
+ 
+*{  /*Selector UNIVERSAL. Ataca todas los elementos y aplica su regla. El outliner muestra su hitbox*/
+   /* outline: 1px red solid; */
+   box-sizing: border-box; /*Con esto fuerza a que el box tenga las dimensiones que yo le habia marcado "300x200"*/
+}
+
+html, body, h1, h2, h3, p { /*Va con coma porque estan anidados*/
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: nunito, Verdana, Geneva, Tahoma, sans-serif; /*lo llamamos desde el nombre que le pusimos*/
+    font-size: 18px;
+}
+
+/* Selectores de TIPO --- Van primero*/  
+/*Peso = 001*/
+body{
+    background-color: #ffffff;
+    /*height: 600px;*/
+}
+header{
+    background-color: #ffffff;
+}
+a{
+    /*
+    display: block;
+    --Con esto pasa de ser un bloque. Usa todo el ancho de la pantalla. De normal es 'inline'
+    */ 
+    text-decoration: none;
+    color: aliceblue;
+}
+
+/* selectors de CLASE --- Van debajo de los de CLASE*/
+/*Peso = 010*/
+.vinculo-pie{
+    color: #999999;
+}
+
+/* Cabecera */
+.cabecera-principal{
+    /*position: sticky;*/ /*Tema clase 12. Con eso le decimos que esto se mantiene siempre en pantalla por mas que el usuario scrolee*/
+    top: 0; /*Que tan lejos esta de su contenedor padre con 'position'*/
+    display: flex; /*con flex es un contenedor flexible. Permite organizar y alinear elementos
+                    hijos(items) de forma dinamica*/
+    flex-direction: row-; /*Estoy diciendo que el eje principal es el X (con =row) o Y con (column)*/
+    justify-content: space-between; /*define la alineacion.*/
+    align-items: center; /*centra segun el eje principal*/
+    background-color: #999999;
+    padding: 10px;
+    z-index: 1; /*fue un parentesis. Googlear que hace porque no entendi pingo*/
+}
+.cabecera-principal nav a{  /*Estp es un selector combinado*/
+    color: #999999;
+}
+
+.cabecera-principal a img { /*Selector combinado. Solamente se aplica (en este caso) a la imagen, porque es el ultimo de la combinacion*/
+    width: 50px;
+}
+
+/* contenido principal */
+.contenido-principal{
+    background-color: #5f5f5f;
+    height: 1500px; /*se agrega esto para mostrar lo del sticky*/
+}
+
+.contenido-principal .contenedor{
+    width: 300px;
+    height: 200px;
+    padding: 10px; /*Relleno. Si pongo un solo valor afecta a los 4 bordes. Si quiero que afecte a cada borde individualmente 
+                    puedo colocar los 4 bordes "10px (arriba) 11px(derecha) 12px(abajo) 13px(izquierda)
+                    Tambien puede hacerse -left -right -top*/
+    background-color: #ccc;
+    border: 2px solid black;
+    position: absolute; /*Tema clase 12. Absolute: lo saca del flujo normal y lo posiciona en otro lado 
+                        Se ve que hace cuando scrolleamos y este queda fijo en un lugar*/
+    top: 100px; /*este y el de abajo van con el absolute*/
+    right: 20px;
+        /*
+    position: relative;/*toma como referencia donde esta posicionado el elemento*/
+}
+
+.contenido-principal .contenedor p{
+    font-size: 1rem; /*1rem = 100% del original. En este caso arriba en la raiz dijimos que font size es 18px.
+                    si se pone 0.5rem serian 9px*/
+}
+
+
+/* pie principal */
+.pie-principal{
+    background-color: #999999;
+}
+
+.pie-principal .contacto-whatsapp{
+    position: fixed; /*Corregir esto. debe quedar a la derecha y por afuera del footer*/
+    right: 30px;
+    bottom: 30px;
+}
+
+.vinculo-pie {
+    text-decoration: none; /*arreglar esto para quitar el contraste del hipervinculo*/
+}
+
+/* selectores de ID -- NO USAR. EL PROFE LOS ODIA igual que el !important */
+/*Peso = 100*/
+
+/*
+#navegacion-principal {
+    background-color: rgb(230, 230, 230);
+}
+*/
+
+/* ---------------- Responsabilidad ------------------ */
+/*mobile first --> Primero se codea para mobile porque es mayoria de dispositivos. todo lo que hemos estado viendo arriba es mobile*/
+
+@media (width > 600px) { /*Googlear que es*/ /*Aca digo que si la pantalla mide mas que esto va a ocurrir todo lo de abajo*/
+
+    .cabecera-principal nav {
+        display: block; /*tiene que ir el mismo display que estaba antes*/
+    }
+
+    .cabecera-principal .boton-menu {
+        display: none;
+    }
+
+    .contenido-principal{
+        background-color: #cf1818;
+    }
+
+}
